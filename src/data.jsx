@@ -37,6 +37,29 @@ const useAllGames = () => {
 
     return allGames;
 };
+const usePopularGames = () => {
+    const [popularGames, setPopularGames] = useState(null);
 
+    useEffect(() => {
+        fetchData('https://free-to-play-games-database.p.rapidapi.com/api/games?platform=all&sort-by=popularity')
+            .then(result => setPopularGames(result))
+            .catch(error => console.error('Error:', error));
+    }, []);
 
-export { usePcGames, useBrowserGames, useAllGames }
+    return popularGames;
+}
+const useAzGames = () => {
+    const [azGames, setAzGames] = useState(null);
+
+    useEffect(() => {
+        fetchData('https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=alphabetical')
+            .then(result => setAzGames(result))
+            .catch(error => console.error('Error:', error));
+    }, []);
+
+    return azGames;
+}
+
+export { usePcGames, useBrowserGames, useAllGames, usePopularGames, useAzGames }
+
+export default useAllGames;
