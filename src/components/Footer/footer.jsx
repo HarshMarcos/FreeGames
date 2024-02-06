@@ -7,7 +7,7 @@ const Footer = () => {
         <footer>
             <div className="footer-main">
 
-                <section class="top">
+                <section className="top">
                     <ul>
                         <li>
                             <h3>Pagination</h3>
@@ -36,7 +36,7 @@ const Footer = () => {
                     </ul>
                 </section>
 
-                <section class="bottom">
+                <section className="bottom">
                     <span>© 2024 Way to Game</span>
                 </section>
             </div>
